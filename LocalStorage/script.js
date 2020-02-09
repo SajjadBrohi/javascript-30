@@ -1,21 +1,21 @@
 const addItems = document.querySelector('.add-items');
 const itemsList = document.querySelector('.plates');
-const items = JSON.parse(localStorage.getItem('item')) || [];
+const items = JSON.parse(localStorage.getItem('items')) || [];
 
 function formSubmit(e) {
     e.preventDefault();
 
-    itemName = this.querySelector("input[type='text']").value;
+    let itemName = this.querySelector("input[type='text']").value;
 
-    item = {
+    let item = {
         itemName,
         checked: false
     }
 
     items.push(item);
+    itemsAdd(itemsList, items);
+    localStorage.setItem('items', JSON.stringify(items));
     this.reset();
-    localStorage.setItem('item', JSON.stringify(items))
-    itemsAdd(itemsList, items)
 }
 
 function itemsAdd(plates, plateList) {
@@ -29,10 +29,16 @@ function itemsAdd(plates, plateList) {
 }
 
 function checkboxStorage(e) {
-    console.log(e.target);
-    
+    if (!e.target.matches("input")) return;
+    const el = e.target;
+    const index = el.dataset.index;
+    items[index].checked = !items[index].checked;
+    localStorage.setItem('items', JSON.stringify(items));
+    itemsAdd(itemsList, items)
+
 }
 
-itemsAdd(itemsList, items);
 addItems.addEventListener("submit", formSubmit);
 itemsList.addEventListener("click", checkboxStorage);
+
+itemsAdd(itemsList, items);
