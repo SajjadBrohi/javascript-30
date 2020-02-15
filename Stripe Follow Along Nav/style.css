@@ -37,6 +37,8 @@ body {
 h2 {
 	margin-top: 0;
 	padding-top: 0.8em;
+	text-align: center;
+	color: aliceblue;
 }
 
 nav {
@@ -86,7 +88,7 @@ nav ul {
 	display: block;
 }
 
-.trigger-enter-active .dropdown {
+.trigger-enter .dropdown {
 	opacity: 1;
 }
 
