@@ -5,15 +5,16 @@ const NAVIGATION = document.querySelector("nav");
 function displayDropdown() {
 	let dropdownElements = this.querySelector(".dropdown");
 	let navCoords = NAVIGATION.getBoundingClientRect();
+
+	this.classList.add("trigger-enter");
+	DROP_DOWN_BACKGROUND.classList.add("open");
+
 	let {
 		top: dropdownTopPosition,
 		left: dropdownLeftPosition,
 		height: dropdownHeight,
 		width: dropdownWidth
 	} = dropdownElements.getBoundingClientRect();
-
-	this.classList.add("trigger-enter");
-	DROP_DOWN_BACKGROUND.classList.add("open");
 
 	dropdownTopPosition -= navCoords.top;
 	dropdownLeftPosition -= navCoords.left;
