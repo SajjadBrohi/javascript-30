@@ -1,6 +1,6 @@
-const timerButtons = document.querySelectorAll(".timer__button");
-const timeLeftDisplay = document.querySelector(".display__time-left");
-const endTimeDisplay = document.querySelector(".display__end-time");
+const timerButtons = document.querySelectorAll('.timer__button');
+const timeLeftDisplay = document.querySelector('.display__time-left');
+const endTimeDisplay = document.querySelector('.display__end-time');
 const minutesForm = document.customForm;
 
 let timerTime;
@@ -20,7 +20,7 @@ function getTime(timeInSeconds) {
 	let hours = (timeInSeconds - seconds - minutes * 60) / 3600;
 
 	return `${addZeroToTime(hours)}:${addZeroToTime(minutes)}:${addZeroToTime(
-		seconds
+		seconds,
 	)}`;
 }
 
@@ -66,7 +66,7 @@ function formMinutesFormatting(e) {
 }
 
 timerButtons.forEach((button) =>
-	button.addEventListener("click", (e) => startTimer(e.target.dataset.time))
+	button.addEventListener('click', (e) => startTimer(e.target.dataset.time)),
 );
 
-minutesForm.addEventListener("submit", formMinutesFormatting);
+minutesForm.addEventListener('submit', formMinutesFormatting);
