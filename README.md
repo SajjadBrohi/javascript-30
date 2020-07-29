@@ -2,9 +2,10 @@
 
 ## Exercises from:
 
-JavaScript 30
+JavaScript 30 (javascript30.com)
+
 By Wes Bos
-javascript30.com
+
 
 ## Description:
 
